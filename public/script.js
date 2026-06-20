@@ -2,6 +2,15 @@ const slides = document.querySelectorAll("#slider img");
 const dots = document.querySelectorAll("#dots button");
 let slide = 0;
 
+const menuBtn = document.querySelector("#menu-btn");
+
+if (menuBtn) {
+    menuBtn.onclick = () => {
+        const open = menuBtn.getAttribute("aria-expanded") === "true";
+        menuBtn.setAttribute("aria-expanded", !open);
+    };
+}
+
 if (slides.length) {
     function showSlide(index) {
         slides[slide].hidden = true;
