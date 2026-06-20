@@ -117,7 +117,8 @@ main {
     flex: 1;
 }
 
-#register-form {
+#register-form,
+#login-form {
     max-width: 520px;
     margin: 40px auto;
     padding: 24px;
@@ -125,18 +126,21 @@ main {
     background: #fff;
 }
 
-#register-form h2 {
+#register-form h2,
+#login-form h2 {
     margin: 0 0 20px;
     color: #009345;
 }
 
-#register-form label {
+#register-form label,
+#login-form label {
     margin-bottom: 14px;
     display: block;
     color: #333;
 }
 
-#register-form input {
+#register-form input,
+#login-form input {
     width: 100%;
     height: 42px;
     margin-top: 6px;
@@ -145,11 +149,13 @@ main {
     outline: 0;
 }
 
-#register-form input:focus {
+#register-form input:focus,
+#login-form input:focus {
     border-color: #009345;
 }
 
-#register-form button {
+#register-form button,
+#login-form button {
     width: 100%;
     min-height: 44px;
     border: 0;
@@ -159,7 +165,8 @@ main {
 }
 
 #password-strength,
-#register-message {
+#register-message,
+#login-message {
     margin-top: 8px;
     display: block;
     font-size: 14px;
