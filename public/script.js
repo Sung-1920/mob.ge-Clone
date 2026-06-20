@@ -32,6 +32,28 @@ const phones = [
 ];
 
 const phoneGrid = document.querySelector("#phones");
+const samsungPhones = [
+    ["Samsung Galaxy Z Fold Wide", "SM-F956", "7.6 inches", "200 MP", "4400 mAh"],
+    ["Samsung Galaxy A27", "SM-A276", "6.7 inches", "50 MP", "5000 mAh"],
+    ["Samsung Galaxy M17e", "SM-M076", "6.6 inches", "50 MP", "5000 mAh"],
+    ["Samsung Galaxy F70e", "SM-E076", "6.7 inches", "64 MP", "6000 mAh"],
+    ["Samsung Galaxy S26+", "SM-S947"],
+    ["Samsung Galaxy S26", "SM-S942"],
+    ["Samsung Galaxy A07", "SM-A075"],
+    ["Samsung Galaxy A57", "SM-A576"],
+    ["Samsung Galaxy A37", "SM-A376"],
+    ["Samsung Galaxy S26 Ultra", "SM-S948"],
+    ["Samsung Galaxy M17", "SM-M176"],
+    ["Samsung Galaxy Z TriFold", "SM-D639"],
+    ["Samsung Galaxy F07", "SM-E075"],
+    ["Samsung Galaxy A17 4G", "SM-A175"],
+    ["Samsung Galaxy F17", "SM-E176"],
+    ["Samsung Galaxy M07", "SM-M075"],
+    ["Samsung Galaxy A07 4G", "SM-A075F"],
+    ["Samsung Galaxy Tab S10 Lite", "SM-X400"],
+    ["Samsung Galaxy Tab S11", "SM-X730"],
+    ["Samsung Galaxy Tab S11 Ultra", "SM-X930"],
+];
 
 if (phoneGrid) {
     phoneGrid.innerHTML = phones.map(phone => `
@@ -44,6 +66,82 @@ if (phoneGrid) {
             <button>შეადარე</button>
         </div>
     `).join("");
+}
+
+const samsungList = document.querySelector("#samsung-list");
+
+if (samsungList) {
+    samsungList.innerHTML = samsungPhones.map(phone => `
+        <div>
+            <a href="/samsung_details.html">
+                <img src="/public/samsung-galaxy-z-fold-8-wide-r.jpg" alt="${phone[0]}">
+                <p>${phone[0]}</p>
+                <span>${phone[1]}</span>
+            </a>
+            <button>შეადარე</button>
+        </div>
+    `).join("");
+}
+
+const phoneDetail = document.querySelector("#phone-detail");
+
+if (phoneDetail) {
+    const phone = samsungPhones[0];
+    const specs = [
+        ["ტექნიკური მახასიათებლები", ""],
+        ["გამოშვება", ""],
+        ["სტატუსი:", "სავარაუდო მონაცემები"],
+        ["ქსელი", ""],
+        ["SIM ტიპი:", "eSIM"],
+        ["ინტერნეტი სიჩქარე:", "HSPA, LTE, 5G"],
+        ["2G:", "GSM 850 / 900 / 1800 / 1900"],
+        ["3G:", "HSDPA 850 / 900 / 1900 / 2100"],
+        ["4G:", "LTE"],
+        ["5G:", "SA/NSA/Sub6"],
+        ["ეკრანი", ""],
+        ["ტიპი:", "Foldable LTPO OLED, 120Hz, HDR10+"],
+        ["ზომა:", phone[2]],
+        ["რეზოლუცია:", "1920 x 2713 pixels"],
+        ["კამერა", ""],
+        ["მთავარი კამერა:", phone[3] + ", wide, ultrawide"],
+        ["მთავარი კამერის ვიდეო:", "4K@24/30/60fps, 1080p"],
+        ["წინა კამერა:", "10 MP"],
+        ["პროცესორი", ""],
+        ["ჩიპსეტი:", "3 nm"],
+        ["მეხსიერება", ""],
+        ["შიდა მეხსიერება:", "256GB 12GB RAM, 512GB 12GB RAM"],
+        ["მეხსიერების ბარათი:", "No"],
+        ["ოპერაციული სისტემა", ""],
+        ["OS:", "Android"],
+        ["კომუნიკაცია", ""],
+        ["Wi-Fi:", "Wi-Fi 802.11 a/b/g/n/ac/6/7"],
+        ["Bluetooth:", "5.3"],
+        ["NFC:", "კი"],
+        ["რადიო:", "No"],
+        ["ხმა", ""],
+        ["3.5მმ პორტი:", "No"],
+        ["დამატებითი ფუნქციები", ""],
+        ["სენსორები:", "თითის ანაბეჭდი, accelerometer, gyro, proximity"],
+        ["ბატარეა:", phone[4]],
+    ];
+
+    phoneDetail.innerHTML = `
+        <h2>${phone[0]}</h2>
+        <img src="/public/samsung-galaxy-z-fold-8-wide-r.jpg" alt="${phone[0]}">
+        <table>
+            ${specs.map(row => row[1] ? `
+                <tr>
+                    <th>${row[0]}</th>
+                    <td>${row[1]}</td>
+                </tr>
+            ` : `
+                <tr>
+                    <td colspan="2">${row[0]}</td>
+                </tr>
+            `).join("")}
+        </table>
+        <a href="/samsung.html">Samsung გვერდზე დაბრუნება</a>
+    `;
 }
 
 const registerForm = document.querySelector("#register-form");
