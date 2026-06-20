@@ -198,6 +198,13 @@ main {
     background-size: 300% 300%;
     animation: announcementsGradient 8s linear infinite;
     color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-origin: center;
+}
+
+#announcements:hover {
+    transform: scale(1.03);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.16);
 }
 
 @keyframes announcementsGradient {
@@ -230,6 +237,13 @@ main {
     gap: 10px;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.18);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#announcements p:hover,
+#announcements a:hover {
+    background: rgba(255, 255, 255, 0.32);
+    transform: scale(1.02);
 }
 
 #announcements span {
@@ -248,6 +262,7 @@ main {
     color: #fff;
     text-align: center;
     font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 #filters {
@@ -298,12 +313,24 @@ main {
     background: #fff;
     text-align: center;
     position: relative;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+#phones div:hover {
+    border-color: #3c9bcd;
+    box-shadow: 0 3px 10px rgba(60, 155, 205, 0.25);
+    transform: translateY(-2px);
 }
 
 #phones img {
     height: 170px;
     margin: 0 auto 18px;
     object-fit: contain;
+    transition: transform 0.15s ease;
+}
+
+#phones div:hover img {
+    transform: scale(1.04);
 }
 
 #phones p {
@@ -311,6 +338,11 @@ main {
     color: #333;
     font-size: 16px;
     font-weight: 600;
+    transition: color 0.15s ease;
+}
+
+#phones div:hover p {
+    color: #3c9bcd;
 }
 
 #phones span {
@@ -329,6 +361,11 @@ main {
     background: #27aae1;
     color: #fff;
     cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+#phones button:hover {
+    background: #3c9bcd;
 }
 
 footer {
